@@ -13,17 +13,17 @@ import {
   Tabs,
   TabList,
   Tab,
-  Image,
+  Image, 
 } from "@chakra-ui/react";
-import nairaSymbol from "/assets/iPhone 11 Pro/Group 14.png";
-import foodIcon from "/assets/iPhone 11 Pro/Group 15 new(1).png";
-import savingsIcon from "/assets/iPhone 11 Pro/Group 15.png";
-import Budget from "/assets/iPhone 11 Pro/Group 26.png";
-import Home from "/assets/iPhone 11 Pro/home.jpg";
-import Report from "/assets/iPhone 11 Pro/report.jpg";
-import menu from "/assets/iPhone 11 Pro/Group 19.png";
-import Profile from "/assets/iPhone 11 Pro/profile.png";
-import barchart from "/assets/iPhone 11 Pro/bar-chart.png";
+import nairaSymbol from "./assets/iPhone 11 Pro/Group 14.png";
+import foodIcon from "./assets/iPhone 11 Pro/Group 15 new(1).png";
+import savingsIcon from "./assets/iPhone 11 Pro/Group 15.png";
+import Budget from "./assets/iPhone 11 Pro/Group 26.png";
+import Home from "./assets/iPhone 11 Pro/home.jpg";
+import Report from "./assets/iPhone 11 Pro/report.jpg";
+import menu from "./assets/iPhone 11 Pro/Group 19.png";
+import Profile from "./assets/iPhone 11 Pro/profile.png";
+import barchart from "./assets/iPhone 11 Pro/bar-chart.png";
 
 function App() {
   return (
