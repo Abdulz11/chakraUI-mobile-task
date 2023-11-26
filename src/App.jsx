@@ -13,119 +13,242 @@ import {
   Tabs,
   TabList,
   Tab,
+  Image,
 } from "@chakra-ui/react";
+import nairaSymbol from "./assets/iPhone 11 Pro/Group 14.png";
+import foodIcon from "./assets/iPhone 11 Pro/Group 15 new(1).png";
+import savingsIcon from "./assets/iPhone 11 Pro/Group 15.png";
+import Budget from "./assets/iPhone 11 Pro/Group 26.png";
+import Home from "./assets/iPhone 11 Pro/home.jpg";
+import Report from "./assets/iPhone 11 Pro/report.jpg";
+import menu from "./assets/iPhone 11 Pro/Group 19.png";
+import Profile from "./assets/iPhone 11 Pro/profile.png";
+import barchart from "./assets/iPhone 11 Pro/bar-chart.png";
 
 function App() {
   return (
     <>
-      <Container mt='40px' p='20px'>
+      <Container mt='40px' p='20px' maxW={["100%", "100%", "1200px"]}>
         <Box>
-          <Heading>Budget</Heading>
+          <Heading as='h1' w={["100%"]} fontSize={["28px", "28px", "50px"]}>
+            Budget
+          </Heading>
         </Box>
         <HStack py='20px'>
-          <img src='' alt='' />
-          <Text color='#707480' fontSize='16px' fontWeight={500}>
+          <Image src={nairaSymbol} />
+          <Text
+            color='#707480'
+            fontSize={["16px", "25px", "30px"]}
+            fontWeight={500}
+          >
             Monthly Budget
           </Text>
         </HStack>
-        <Box p={5} shadow='md' borderWidth='1px' borderRadius='20px2'>
+        <Box p={5} shadow='md' borderWidth='1px' borderRadius='20px'>
           <Heading fontSize='28px' fontWeight='700'>
-            120,000
+            ₦120,000
           </Heading>
         </Box>
         <HStack mt='30px'>
           <Box>
-            <Text>Last Month</Text>
+            <Tabs>
+              <TabList color='grey'>
+                <Tab fontWeight='700' fontSize={["16px", "25px", "30px"]}>
+                  Last Month
+                </Tab>
+                <Tab fontWeight='700' fontSize={["16px", "25px", "30px"]}>
+                  This Month
+                </Tab>
+              </TabList>
+            </Tabs>
           </Box>
-          <Box>
-            <Text>This Month</Text>
-          </Box>
-          <Box>
-            <img src='' alt='image' />
+          <Box ml='auto'>
+            <Image src={menu} alt='menu image' />
           </Box>
         </HStack>
-        <Circle borderColor='blue.500'>
-          <CircularProgress value={50} size='150px' color='blue.400'>
-            <CircularProgressLabel fontWeight='bold' color='blue.500'>
+
+        {/* PROGRESS BAR */}
+        <Circle p='30px'>
+          <CircularProgress
+            value={50}
+            size={["155px", "200px", "250px"]}
+            color='blue.400'
+            borderRadius='50%'
+            borderWidth='12px'
+            borderColor='blue.200'
+            thickness='4px'
+          >
+            <CircularProgressLabel fontWeight='bold' color='blue.400'>
               49%
             </CircularProgressLabel>
           </CircularProgress>
         </Circle>
         <Box>
-          <VStack>
-            <Text color='#707480' fontSize='16px' fontWeight={500}>
+          <VStack mt='15px'>
+            <Text
+              color='#707480'
+              fontSize={["16px", "18px", "30px", "40px"]}
+              fontWeight={500}
+            >
               Amount spent so far
             </Text>
-            <Text fontWeight={700} fontSize='18px'>
-              50,000/120,000
+            <Text
+              fontWeight={700}
+              fontSize={["18px", "20px", "34px", "43px"]}
+              color='#0466C8'
+            >
+              ₦50,000/
+              <Text as='span' color='#67A2DC'>
+                ₦120,000
+              </Text>
             </Text>
           </VStack>
         </Box>
-        <Heading as='h2' mt='30px'>
+
+        {/* CATERGORIES */}
+        <Heading as='h2' mt={["30px", "30px", "43px"]} ml='20px'>
           Category Breakdown
         </Heading>
-        {/* categories */}
-        <VStack>
-          <HStack>
-            <Box>Image</Box>
-            <VStack>
-              <Text>Food and Drink</Text>
-              <Text>40%</Text>
-            </VStack>
+        <VStack mt={["35px", "35px", "45px"]}>
+          <Flex justify='space-between' w='90%'>
             <Box>
-              <Text>10,000/20,000</Text>
+              <Image src={foodIcon} />
             </Box>
-          </HStack>
-        </VStack>
-        <VStack>
-          <HStack spacing='24px'>
-            <Box h='40px'>
-              <HStack>
-                <img src='' alt='image' />
-                <VStack>
-                  <Text>Savings</Text>
-                  <Text>20%</Text>
-                </VStack>
-              </HStack>
+            <Box ml='10px'>
+              <Text
+                fontWeight='600'
+                fontSize={["10px", "16px", "25px", "30px"]}
+              >
+                Food and Drink
+              </Text>
+              <Text
+                color='#707480'
+                fontWeight='600'
+                fontSize={["10px", "16px", "25px", "30px"]}
+                textAlign='left'
+              >
+                40%
+              </Text>
             </Box>
             <Spacer />
-            <Box h='40px'>
-              <Text>10,000/20,000</Text>
+            <Box>
+              <Text
+                fontWeight='700'
+                fontSize={["10px", "16px", "25px", "30px"]}
+              >
+                <Text as='span' color='#001233'>
+                  ₦10,000/
+                  <Text as='span' color='#C1C4CD'>
+                    ₦20,000
+                  </Text>
+                </Text>
+              </Text>
             </Box>
-          </HStack>
+          </Flex>
+          <Flex justify='space-between' mt='10px' w='90%'>
+            <Box>
+              <Image src={savingsIcon} />
+            </Box>
+            <Box ml='10px'>
+              <Text fontWeight='600' fontSize='15px'>
+                Savings
+              </Text>
+              <Text
+                color='#707480'
+                fontWeight='600'
+                fontSize={["10px", "16px", "25px", "30px"]}
+                textAlign='left'
+              >
+                20%
+              </Text>
+            </Box>
+            <Spacer />
+            <Box>
+              <Text
+                fontWeight='700'
+                fontSize={["10px", "16px", "25px", "30px"]}
+              >
+                <Text as='span' color='#001233'>
+                  ₦10,000/
+                  <Text as='span' color='#C1C4CD'>
+                    ₦20,000
+                  </Text>
+                </Text>
+              </Text>
+            </Box>
+          </Flex>
         </VStack>
-        {/* nav */}
-        <Flex mt='50px'>
-          <Tabs defaultIndex={1}>
-            <TabList>
-              <Tab>
+
+        {/* NAVBAR */}
+        <Flex mt='50px' w='100%' mx='auto'>
+          <Tabs defaultIndex={3}>
+            <TabList color='grey'>
+              <Tab mr={["25px", "25px", "40px", "110px"]} ml={{ md: "30px" }}>
                 <VStack>
-                  <img src='' alt='image' />
-                  <Text>Home</Text>
+                  <Image src={Home} boxSize={{ md: "40px" }} />
+                  <Text
+                    fontWeight='600'
+                    fontSize={["12px", "12px", "25px", "32px"]}
+                  >
+                    Home
+                  </Text>
                 </VStack>
               </Tab>
-              <Tab>
+              <Spacer />
+              <Tab mr={["25px", "25px", "50px", "120px"]}>
                 <VStack>
-                  <img src='' alt='image' />
-                  <Text>Report</Text>
+                  <Image src={Report} boxSize={{ md: "40px" }} />
+                  <Text
+                    fontWeight='600'
+                    fontSize={["12px", "12px", "25px", "32px"]}
+                  >
+                    Report
+                  </Text>
                 </VStack>
               </Tab>
-              <Tab>
+              <Spacer />
+              <Tab mr={["25px", "25px", "40px", "100px"]}>
                 <VStack>
-                  <img src='' alt='image' />
-                  <Text>Chart</Text>
+                  <Image
+                    src={Budget}
+                    alt='image'
+                    boxSize={{ sm: "20px", md: "40px" }}
+                  />
+                  <Text
+                    fontWeight='600'
+                    fontSize={["12px", "12px", "25px", "32px"]}
+                  >
+                    Budget
+                  </Text>
                 </VStack>
               </Tab>
-              <Tab>
+              <Spacer />
+              <Tab mr={["25px", "25px", "50px", "90px"]}>
                 <VStack>
-                  <img src='' alt='image' />
-                  <Text>Budget</Text>
+                  <Image
+                    src={barchart}
+                    alt='barchart image'
+                    color='grey'
+                    boxSize={{ sm: "23px", md: "40px" }}
+                  />
+                  <Text
+                    fontWeight='600'
+                    fontSize={["12px", "12px", "25px", "32px"]}
+                  >
+                    Chart
+                  </Text>
                 </VStack>
               </Tab>
-              <Tab>
+              <Spacer />
+              <Tab mr={["25px", "25px", "100px", "90px"]}>
                 <VStack>
-                  <img src='' alt='image' />
-                  <Text>Profile</Text>
+                  <Image src={Profile} boxSize={{ md: "40px" }} alt='image' />
+                  <Text
+                    fontWeight='600'
+                    fontSize={["12px", "12px", "25px", "32px"]}
+                  >
+                    Profile
+                  </Text>
                 </VStack>
               </Tab>
             </TabList>
